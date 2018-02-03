@@ -1,0 +1,39 @@
+{
+  "namespaceCode": "nsc_001",
+  //3种：decision/tree/table
+  "type": "decision",
+  "decision": {
+    "decisionName": "dn_001",
+    "decisionCode": "dc_001",
+    "rule": {
+      "ruleName": "rn_1",
+      "ruleCode": "rc_1",
+      "conditionNode": {
+        //and/or，表示conditionSet数组中元素的关系
+        "joinOperator": "and",
+        "conditionNode": [],
+        "compareModel": {
+          "leftValue": "fact_test_01",
+          // 因子、数值等类型
+          "leftType": "FACTOR",
+          "compareOperator": ">",
+          //> < ==
+          "rightValue": "23",
+          "rightType": "VALUE"
+        }
+      }
+    },
+    "action": {
+      "actionName": "an_1",
+      "actionCode": "ac_01",
+      // RETURN_MSG:返回信息
+      "actionType": "RETURN_MSG",
+      "matched": {
+        "msg": "OK"
+      },
+      "notMatched": {
+        "msg": "notMatched"
+      }
+    }
+  }
+}
